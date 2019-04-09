@@ -24,12 +24,16 @@ class ProductHome extends Component{
                 <Router>
                     <Link className="linkInGeneral" to="/">Home</Link>
                     <Link className="linkInGeneral" to="/addProduct">Add Product</Link>
-                    <h1>Here are all the products</h1>
+                    <Route path="/addProduct"
+                           component={()=><AddProduct updateDatabaseData={this.updateDatabaseData}/>
+                           }/>
+
                     <ProductList collection={this.state.collection}/>
 
 
                     {/*<Route path="/" component={ProductList}/>*/}
-                    <Route path="/addProduct" component={AddProduct}/>
+                    {/*<Route path="/" component={AddProduct}/>*/}
+
                 </Router>
             </div>
         );

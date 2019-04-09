@@ -16,7 +16,8 @@ class AddProduct extends Component{
                 price: e.target.price.value,
                 quantity: e.target.quantity.value,
             }),
-        });
+        })
+            .then(this.props.updateDatabaseData());
     };
 
     render(){
