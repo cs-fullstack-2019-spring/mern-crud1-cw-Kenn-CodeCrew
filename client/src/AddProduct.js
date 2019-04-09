@@ -4,7 +4,6 @@ class AddProduct extends Component{
 
     submitProductForm=(e)=>{
         e.preventDefault();
-        console.log("Does this work??");
         fetch('/add', {
             method: 'POST',
             headers: {

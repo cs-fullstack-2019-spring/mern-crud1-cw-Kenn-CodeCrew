@@ -29,4 +29,21 @@ router.delete('/delete', (req, res)=>{
   });
 });
 
+router.get('/edit/:id', (req, res)=>{
+  ProductCollection.findOne({productID:req.params.id},
+      (errors, results)=>{
+        if(errors) res.send(errors);
+        else res.send(results);
+      });
+});
+
+router.put('/update', (req, res)=>{
+  ProductCollection.updateOne(
+      {productID: req.body.productID}, req.body,
+      (errors, results)=>{
+        if(errors) res.send(errors);
+        else res.send(results);
+      });
+});
+
 module.exports = router;
