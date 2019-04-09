@@ -10,7 +10,8 @@ class ProductList extends Component{
                 'Content-type': 'application/json',
             },
             body: JSON.stringify({productID:e.target.name}),
-        });
+        })
+            .then(()=>this.props.updateDatabaseData());
     };
 
     render(){

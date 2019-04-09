@@ -28,7 +28,7 @@ class ProductHome extends Component{
                            component={()=><AddProduct updateDatabaseData={this.updateDatabaseData}/>
                            }/>
 
-                    <ProductList collection={this.state.collection}/>
+                    <ProductList collection={this.state.collection} updateDatabaseData={this.updateDatabaseData}/>
 
 
                     {/*<Route path="/" component={ProductList}/>*/}
